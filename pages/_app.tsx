@@ -1,4 +1,4 @@
-import '@shared/globals.css'
+import 'shared/globals.css'
 import type { AppProps } from 'next/app'
 import { Navbar } from 'components'
 
