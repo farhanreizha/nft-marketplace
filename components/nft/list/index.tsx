@@ -1,8 +1,9 @@
 import { FC } from 'react'
 import { NftItem } from 'components'
+import { NftMeta } from 'types/nft'
 
 type NftListProps = {
-  nfts: any[]
+  nfts: NftMeta[]
 }
 
 const NftList: FC<NftListProps> = ({ nfts }) => {
