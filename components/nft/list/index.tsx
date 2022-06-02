@@ -1,15 +1,19 @@
 import { FC } from 'react'
 import { NftItem } from 'components'
 
-const NftList: FC = () => {
+type NftListProps = {
+  nfts: any[]
+}
+
+const NftList: FC<NftListProps> = ({ nfts }) => {
   return (
-    <>
-      <div className='mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none'>
-        <div className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
+    <div className='mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none'>
+      {nfts.map((nft) => (
+        <div key={nft.image} className='flex flex-col rounded-lg shadow-lg overflow-hidden'>
           <NftItem />
         </div>
-      </div>
-    </>
+      ))}
+    </div>
   )
 }
 export default NftList
