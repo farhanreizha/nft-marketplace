@@ -1,5 +1,5 @@
 import { ReactNode, FC } from 'react'
-import { Navbar } from 'components'
+import { Navbar } from '@ui'
 
 interface Props {
   children: ReactNode

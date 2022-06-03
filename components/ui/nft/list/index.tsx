@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { NftItem } from 'components'
+import { NftItem } from '@ui/nft'
 import { NftMeta } from 'types/nft'
 
 type NftListProps = {
