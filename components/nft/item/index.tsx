@@ -1,5 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
+import Image from 'next/image'
 import { FC } from 'react'
 import { NftMeta } from 'types/nft'
 
@@ -11,7 +10,13 @@ const NftItem: FC<NftItemProps> = ({ item }) => {
   return (
     <>
       <div className='flex-shrink-0'>
-        <img className={`h-full w-full object-cover`} src={item.image} alt='New NFT' />
+        <Image
+          height={600}
+          width={600}
+          className={`h-full w-full object-cover`}
+          src={item.image}
+          alt='New NFT'
+        />
       </div>
       <div className='flex-1 bg-white p-6 flex flex-col justify-between'>
         <div className='flex-1'>
@@ -28,7 +33,13 @@ const NftItem: FC<NftItemProps> = ({ item }) => {
               <dd className='order-1 text-xl font-extrabold text-indigo-600'>
                 <div className='flex justify-center items-center'>
                   100
-                  <img className='h-6' src='/images/small-eth.webp' alt='ether icon' />
+                  <Image
+                    width={24}
+                    height={24}
+                    className='h-6'
+                    src='/images/small-eth.webp'
+                    alt='ether icon'
+                  />
                 </div>
               </dd>
             </div>
