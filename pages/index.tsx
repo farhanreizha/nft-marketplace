@@ -6,9 +6,16 @@ import { NftList } from '@ui/nft'
 import { useWeb3 } from '@providers/web3'
 
 const Home: NextPage = () => {
-  const { ethereum } = useWeb3()
+  const { provider } = useWeb3()
 
-  console.log(ethereum)
+  const getAccounts = async () => {
+    const accounts = await provider!.listAccounts()
+    console.log(accounts[0])
+  }
+
+  if (provider) {
+    getAccounts()
+  }
 
   return (
     <>
