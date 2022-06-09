@@ -33,7 +33,7 @@ export const loadContract = async (
   provider: providers.Web3Provider
 ): Promise<Contract> => {
   if (!NETWORK_ID) {
-    return Promise.reject('Network ID is not defined!')
+    return Promise.reject('Network ID is not defind!')
   }
 
   const res = await fetch(`/contracts/${name}.json`)
