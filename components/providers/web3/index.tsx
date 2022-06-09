@@ -1,3 +1,4 @@
+import { setupHooks } from '@hooks/web3/setupHooks'
 import { ethers } from 'ethers'
 import { createContext, FC, ReactNode, useContext, useEffect, useState } from 'react'
 import { createDefaultState, loadContract, Web3State } from './utils'
@@ -21,6 +22,7 @@ const Web3Provider: FC<Props> = ({ children }) => {
         provider,
         contract,
         isLoading: false,
+        hooks: setupHooks({ ethereum: window.ethereum, provider, contract }),
       })
     }
     initWeb3()
