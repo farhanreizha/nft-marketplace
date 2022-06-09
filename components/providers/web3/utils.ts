@@ -9,12 +9,6 @@ declare global {
   }
 }
 
-// export type Web3Params = {
-//   ethereum: MetaMaskInpageProvider | null
-//   provider: providers.Web3Provider | null
-//   contract: Contract | null
-// }
-
 type Nullable<T> = {
   [P in keyof T]: T[P] | null
 }
