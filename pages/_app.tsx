@@ -5,11 +5,11 @@ import { Web3Provider } from '@providers'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <BaseLayout>
-      <Web3Provider>
+    <Web3Provider>
+      <BaseLayout>
         <Component {...pageProps} />
-      </Web3Provider>
-    </BaseLayout>
+      </BaseLayout>
+    </Web3Provider>
   )
 }
 
