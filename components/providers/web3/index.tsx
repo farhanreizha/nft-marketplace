@@ -1,10 +1,8 @@
-import { setupHooks } from '@hooks/web3/setupHooks'
-import { ethers } from 'ethers'
 import { createContext, FC, ReactNode, useContext, useEffect, useState } from 'react'
 import { createDefaultState, createWeb3State, loadContract, Web3State } from './utils'
+import { ethers } from 'ethers'
 
 const Web3Context = createContext<Web3State>(createDefaultState())
-
 interface Props {
   children: ReactNode
 }
