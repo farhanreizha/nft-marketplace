@@ -12,7 +12,7 @@ contract NftMarket is ERC721URIStorage {
 
   constructor() ERC721("CreaturesNFT", "CNFT") {}
 
-  function minToken(string memory tokenURI) public payable returns (uint) {
+  function mintToken(string memory tokenURI) public payable returns (uint) {
     _tokenIds.increment();
     _listedItems.increment();
 
