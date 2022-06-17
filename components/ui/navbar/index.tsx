@@ -1,11 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import Link from 'next/link'
+import { Disclosure } from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ActiveLink } from '@ui'
-import { useAccount } from '@hooks/web3'
+import { useAccount, useNetwork } from '@hooks/web3'
 import Walletbar from './walletbar'
 
 const navigation = [
@@ -19,6 +17,9 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const { account } = useAccount()
+  const { network } = useNetwork()
+
+  console.log(network.data)
 
   return (
     <Disclosure as='nav' className='bg-gray-800'>
