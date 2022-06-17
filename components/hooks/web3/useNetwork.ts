@@ -11,8 +11,13 @@ const NETWORK: { [k: string]: string } = {
   1337: 'Ganache',
 }
 
+const targetId = process.env.NEXT_PUBLIC_TARGET_CHAIN_ID as string
+const targetNetwork = NETWORK[targetId]
+
 type UseNetworkResponse = {
   isLoading: boolean
+  isSupported: boolean
+  targetNetwork: string
 }
 
 type NetworkHookFactory = CryptoHookFactory<string, UseNetworkResponse>
@@ -39,6 +44,8 @@ export const hookFactory: NetworkHookFactory =
       ...swr,
       data,
       isValidating,
+      targetNetwork,
+      isSupported: data === targetNetwork,
       isLoading: isLoading || isValidating,
     }
   }
