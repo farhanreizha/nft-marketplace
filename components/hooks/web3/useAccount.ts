@@ -24,7 +24,7 @@ export const hookFactory: AccountHookFactory =
         }
         return account
       },
-      { revalidateOnFocus: false }
+      { revalidateOnFocus: false, shouldRetryOnError: false }
     )
 
     useEffect(() => {
