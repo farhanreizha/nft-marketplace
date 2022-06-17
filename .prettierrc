@@ -7,6 +7,15 @@
         "bracketSpacing": true,
         "explicitTypes": "never"
       }
+    },
+    {
+      "files": ["*.js", "*.ts", "*.jsx", "*.tsx"],
+      "options": {
+        "semi": false,
+        "singleQuote": true,
+        "jsxSingleQuote": false,
+        "bracketSpacing": true
+      }
     }
   ]
 }
