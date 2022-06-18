@@ -85,7 +85,7 @@ contract NftMarket is ERC721URIStorage {
     return items;
   }
 
-  function getOwnNfts() public view returns (NftItem[] memory) {
+  function getOwnedNfts() public view returns (NftItem[] memory) {
     uint ownedItemsCount = ERC721.balanceOf(msg.sender);
     NftItem[] memory items = new NftItem[](ownedItemsCount);
 
