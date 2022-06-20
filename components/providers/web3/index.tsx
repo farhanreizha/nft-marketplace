@@ -53,12 +53,15 @@ const Web3Provider: FC<Props> = ({ children }) => {
         )
         const contract = await loadContract('NftMarket', provider)
 
+        const signer = provider.getSigner()
+        const signedContact = contract.connect(signer)
+
         setGlobalListeners(window.ethereum)
         setWeb3Api(
           createWeb3State({
             ethereum: window.ethereum,
             provider,
-            contract: contract as unknown as NftMarketContract,
+            contract: signedContact as unknown as NftMarketContract,
             isLoading: false,
           })
         )
