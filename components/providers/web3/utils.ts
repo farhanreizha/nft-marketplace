@@ -28,7 +28,12 @@ export const createDefaultState = () => {
   }
 }
 
-export const createWeb3State = ({ ethereum, provider, contract, isLoading }: Web3Dependencies) => {
+export const createWeb3State = ({
+  ethereum,
+  provider,
+  contract,
+  isLoading,
+}: Web3Dependencies) => {
   return {
     ethereum,
     provider,

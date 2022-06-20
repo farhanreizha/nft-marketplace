@@ -1,7 +1,20 @@
-import { createContext, FC, ReactNode, useContext, useEffect, useState } from 'react'
-import { createDefaultState, createWeb3State, loadContract, Web3State } from './utils'
+import {
+  createContext,
+  FC,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
+import {
+  createDefaultState,
+  createWeb3State,
+  loadContract,
+  Web3State,
+} from './utils'
 import { ethers } from 'ethers'
 import { MetaMaskInpageProvider } from '@metamask/providers'
+import { NftMarketContract } from '@_types/nftMarketContract'
 
 const pageReload = () => {
   window.location.reload()
@@ -35,7 +48,9 @@ const Web3Provider: FC<Props> = ({ children }) => {
   useEffect(() => {
     async function initWeb3() {
       try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum as any)
+        const provider = new ethers.providers.Web3Provider(
+          window.ethereum as any
+        )
         const contract = await loadContract('NftMarket', provider)
 
         setGlobalListeners(window.ethereum)
@@ -43,13 +58,15 @@ const Web3Provider: FC<Props> = ({ children }) => {
           createWeb3State({
             ethereum: window.ethereum,
             provider,
-            contract,
+            contract: contract as unknown as NftMarketContract,
             isLoading: false,
           })
         )
       } catch (e: any) {
         console.error('Please, install web3 wallet')
-        setWeb3Api((api) => createWeb3State({ ...(api as any), isLoading: false }))
+        setWeb3Api((api) =>
+          createWeb3State({ ...(api as any), isLoading: false })
+        )
       }
     }
     initWeb3()
