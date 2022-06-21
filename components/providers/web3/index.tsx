@@ -1,24 +1,10 @@
-import {
-  createContext,
-  FC,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from 'react'
-import {
-  createDefaultState,
-  createWeb3State,
-  loadContract,
-  Web3State,
-} from './utils'
+import { createContext, FC, ReactNode, useContext, useEffect, useState, } from 'react'
+import { createDefaultState, createWeb3State, loadContract, Web3State, } from './utils'
 import { ethers } from 'ethers'
 import { MetaMaskInpageProvider } from '@metamask/providers'
 import { NftMarketContract } from '@_types/nftMarketContract'
 
-const pageReload = () => {
-  window.location.reload()
-}
+const pageReload = () => { window.location.reload() }
 
 const handleAccount = (ethereum: MetaMaskInpageProvider) => async () => {
   const isLocked = !(await ethereum._metamask.isUnlocked())
@@ -56,9 +42,8 @@ const Web3Provider: FC<Props> = ({ children }) => {
         const signer = provider.getSigner()
         const signedContact = contract.connect(signer)
 
-        setGlobalListeners(window.ethereum)
-        setWeb3Api(
-          createWeb3State({
+        setTimeout(() =>  setGlobalListeners(window.ethereum), 500)
+        setWeb3Api( createWeb3State({
             ethereum: window.ethereum,
             provider,
             contract: signedContact as unknown as NftMarketContract,
