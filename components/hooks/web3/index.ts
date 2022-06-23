@@ -32,6 +32,6 @@ export const useOwnedNfts = () => {
   const swrRes = hooks.useOwnedNfts()
 
   return {
-    nfts: swrRes,
+    nfts: swrRes
   }
 }
