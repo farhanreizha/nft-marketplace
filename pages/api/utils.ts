@@ -28,8 +28,7 @@ export function withSession(handler: any) {
   })
 }
 
-export const addressCheckMiddleware = async (req: NextApiRequest & { session: Session }, 
-  res: NextApiResponse) => {
+export const addressCheckMiddleware = async (req: NextApiRequest & { session: Session }, res: NextApiResponse) => {
   return new Promise( async (resolve, reject) => {
     const message = req.session.get("message-session")
     const provider = new ethers.providers.JsonRpcProvider("http://127.0.0.1:7545")
