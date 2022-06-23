@@ -45,7 +45,8 @@ const NftCreate: NextPage = () => {
 
     try {
       const {signedData, account} = await getSignedata()
-    } catch (e) {
+      
+    } catch (e: any) {
       console.error(e.message);
     }
   }
