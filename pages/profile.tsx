@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
-import { Nft } from 'types/nft'
+import { Nft } from '@_types/nft'
 import { useOwnedNfts } from '@hooks/web3'
 import { useState } from 'react'
 import { useEffect } from 'react'
