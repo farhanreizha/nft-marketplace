@@ -144,6 +144,7 @@ const NftCreate: NextPage = () => {
     } catch (e: any) {
       console.error(e.message);
     }
+    setPrice("")
   }
 
   if (!network.isConnectedToNetwork) {
